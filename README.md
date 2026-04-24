@@ -19,6 +19,17 @@
 - **🔒 DSGVO-konform** — Alle Daten lokal, kein Cloud-LLM, Ollama als KI-Backend
 - **🐳 Docker-Ready** — Ein Befehl zum Starten
 
+## 📸 Screenshots
+
+### Dashboard — Vertragsübersicht mit Statuskarten
+![Dashboard](screenshots/dashboard.png)
+
+### Vertrag analysieren — KI-Klauselerkennung und -bewertung
+![Vertrag analysieren](screenshots/vertrag_analysieren.png)
+
+### Fristenübersicht — Laufzeiten und Kündigungsfristen
+![Fristenübersicht](screenshots/fristenuebersicht.png)
+
 ## 🚀 Schnellstart
 
 ### Mit Docker (empfohlen)
