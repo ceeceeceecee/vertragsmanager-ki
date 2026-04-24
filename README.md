@@ -3,7 +3,7 @@
 > KI-gestütztes Vertragsmanagement für Unternehmen — DSGVO-konform, self-hosted, Open Source.
 
 [![DSGVO-konform](https://img.shields.io/badge/DSGVO-konform-brightgreen)](https://dsgvo-gesetz.de)
-[![Self-Hosted](https://img.shields.io/badge/Self_Hosted-✓-blue)]()
+[![Self-Hosted](https://img.shields.io/badge/Deployment-Self_Hosted-blue)]()
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)]()
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python)]()
 [![Ollama](https://img.shields.io/badge/Ollama-Local_LLM-000000?logo=ollama)]()
