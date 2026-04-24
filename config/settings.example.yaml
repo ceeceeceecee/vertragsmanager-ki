@@ -1,0 +1,16 @@
+# Konfiguration für Vertragsmanager KI
+# Kopiere diese Datei als settings.yaml und passe die Werte an.
+
+ollama:
+  base_url: "http://localhost:11434"
+  model: "llama3"           # Empfohlen: llama3, mistral, gemma2
+  timeout: 120               # Sekunden Timeout für KI-Anfragen
+
+database:
+  path: "data/vertraege.db"  # Pfad zur SQLite-Datenbank
+
+app:
+  language: "de"
+  max_upload_size_mb: 50     # Maximale Upload-Größe in MB
+  deadline_warning_days: 30  # Tage vor Fristablauf für Warnung
+  refresh_interval: 300      # Dashboard-Aktualisierung in Sekunden

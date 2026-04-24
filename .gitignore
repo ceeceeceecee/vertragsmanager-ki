@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+
+# Umgebungsvariablen
+.env
+.env.local
+
+# Daten
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Konfiguration
+config/settings.yaml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Screenshots (generiert)
+screenshots/*.svg
