@@ -125,6 +125,10 @@ vertragsmanager-ki/
 | Container | Docker + Docker Compose |
 | Sprache | Python 3.11+ |
 
+
+## 👤 Autor
+
+**Cela** — Freelancer für digitale Verwaltungslösungen
 ## 📄 Lizenz
 
 MIT — siehe [LICENSE](LICENSE).
