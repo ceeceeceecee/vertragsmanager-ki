@@ -10,6 +10,11 @@ import os
 import yaml
 from pathlib import Path
 
+# -- Unified Theme System --
+import sys, os as _theme_os
+sys.path.insert(0, _theme_os.path.dirname(_theme_os.path.abspath(__file__)))
+from theme import init_theme, theme_toggle_sidebar, app_footer
+
 from processor.contract_analyzer import analyze_contract
 from processor.clause_extractor import extract_clauses
 from processor.deadline_tracker import get_upcoming_deadlines, get_deadline_stats
@@ -70,6 +75,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+init_theme()
 
 st.title("⚖️ Vertragsmanager KI")
 st.caption("KI-gestütztes Vertragsmanagement — DSGVO-konform & self-hosted")
@@ -289,3 +296,9 @@ elif seite == "⚙️ Einstellungen":
 
     st.divider()
     st.caption("Um die Einstellungen zu ändern, bearbeite `config/settings.yaml`.")
+
+# -- Theme Toggle --
+theme_toggle_sidebar()
+
+# -- Footer --
+app_footer()
