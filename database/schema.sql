@@ -1,4 +1,4 @@
-# SQLite-Schema für Vertragsmanager KI
+-- SQLite-Schema für Vertragsmanager KI
 
 CREATE TABLE IF NOT EXISTS vertraege (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

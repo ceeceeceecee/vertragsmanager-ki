@@ -85,7 +85,7 @@ def theme_toggle_sidebar():
                 st.session_state.cela_theme = "light"
                 st.rerun()
         with c2:
-            if st.button("\ud83c\udf19 Dark", use_container_width=True,
+            if st.button("🌙 Dark", use_container_width=True,
                          type="primary" if get_theme() == "dark" else "secondary"):
                 st.session_state.cela_theme = "dark"
                 st.rerun()
