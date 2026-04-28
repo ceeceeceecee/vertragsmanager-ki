@@ -1,138 +1,67 @@
-# ⚖️ Vertragsmanager KI
+# Vertragsmanager Ki
 
-> KI-gestütztes Vertragsmanagement für Unternehmen — DSGVO-konform, self-hosted, Open Source.
+<p align="center">
+<img src="https://raw.githubusercontent.com/ceeceeceecee/ai-document-analyzer/main/docs/coletrading-banner.svg" alt="ColeTrading" width="600">
+</p>
 
-[![DSGVO-konform](https://img.shields.io/badge/DSGVO-konform-brightgreen)](https://dsgvo-gesetz.de)
-[![Self-Hosted](https://img.shields.io/badge/Deployment-Self_Hosted-blue)]()
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)]()
-[![Python 3.11+](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python)]()
-[![Ollama](https://img.shields.io/badge/Ollama-Local_LLM-000000?logo=ollama)]()
-[![License: MIT](https://img.shields.io/badge/Lizenz-MIT-yellow.svg)](LICENSE)
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python) ![DSGVO](https://img.shields.io/badge/DSGVO-Konform-brightgreen) ![Self-Hosted](https://img.shields.io/badge/Self-Hosted-blue) ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker) ![Ollama](https://img.shields.io/badge/Ollama-Lokal-000000?logo=ollama)
 
-## ✨ Funktionen
+> KI-gestütztes Vertragsmanagement mit automatischer Klauselerkennung (DSGVO-konform)
 
-- **📄 Vertrag analysieren** — KI-gestützte Analyse von Verträgen (PDF, DOCX, TXT)
-- **🔍 Klauselerkennung** — Automatische Extraktion von Kündigungsfristen, Haftungsregelungen, Laufzeiten, Geheimhaltungsklauseln
-- **⏰ Fristenmanagement** — Warnungen vor Ablauf von Kündigungsfristen und Vertragslaufzeiten
-- **📊 Dashboard** — Übersicht über alle Verträge mit Status und Kennzahlen
-- **📈 Berichte** — Vergleich von Verträgen gegen Best Practices
-- **🔒 DSGVO-konform** — Alle Daten lokal, kein Cloud-LLM, Ollama als KI-Backend
-- **🐳 Docker-Ready** — Ein Befehl zum Starten
+## Overview
 
-## 📸 Screenshots
+Automatische Vertragsanalyse mit KI. Erkennt Klauseln, überwacht Fristen, warnt vor Risiken. Self-hosted mit Ollama, DSGVO-konform.
 
-### Dashboard — Vertragsübersicht mit Statuskarten
-![Dashboard](screenshots/dashboard.png)
+## Features
 
-### Vertrag analysieren — KI-Klauselerkennung und -bewertung
-![Vertrag analysieren](screenshots/vertrag_analysieren.png)
+- Automatische Klauselerkennung
+- Fristenüberwachung mit Erinnerungen
+- Risiko-Bewertung
+- Vertragsdatenbank
+- KI-gestützte Zusammenfassung
+- DSGVO-konforme Speicherung
 
-### Fristenübersicht — Laufzeiten und Kündigungsfristen
-![Fristenübersicht](screenshots/fristenuebersicht.png)
+## Tech Stack
 
-## 🚀 Schnellstart
+| Tech | Zweck |
+|------|-------|
+| Python 3.11+ | Backend |
+| Streamlit | Web-Interface |
+| Ollama | Lokale KI |
+| SQLite | Datenbank |
+| Docker | Deployment |
 
-### Mit Docker (empfohlen)
-
-```bash
-git clone https://github.com/ceeceeceecee/vertragsmanager-ki.git
-cd vertragsmanager-ki
-cp config/settings.example.yaml config/settings.yaml
-docker compose up -d
-```
-
-Die Anwendung ist dann unter **http://localhost:8501** erreichbar.
-
-### Ohne Docker
+## Quick Start
 
 ```bash
-# Voraussetzungen: Python 3.11+, Ollama installiert
-git clone https://github.com/ceeceeceecee/vertragsmanager-ki.git
-cd vertragsmanager-ki
-python -m venv venv
-source venv/bin/activate
 pip install -r requirements.txt
-
-# Ollama Modell herunterladen
-ollama pull llama3
-
-# Konfiguration kopieren
-cp config/settings.example.yaml config/settings.yaml
-
-# Anwendung starten
 streamlit run app.py
 ```
 
-## ⚙️ Konfiguration
+## Screenshots
 
-Kopiere `config/settings.example.yaml` nach `config/settings.yaml` und passe die Werte an:
+**Dashboard mit Vertragsübersicht**
 
-```yaml
-ollama:
-  base_url: "http://localhost:11434"
-  model: "llama3"
-  timeout: 120
+<img src="screenshots/dashboard.png" alt="Dashboard mit Vertragsübersicht" width="800">
 
-database:
-  path: "data/vertraege.db"
+**Vertragsanalyse**
 
-app:
-  language: "de"
-  max_upload_size_mb: 50
-  deadline_warning_days: 30
-```
+<img src="screenshots/vertrag_analysieren.png" alt="Vertragsanalyse" width="800">
 
-## 📁 Projektstruktur
+**Fristenübersicht**
 
-```
-vertragsmanager-ki/
-├── app.py                          # Streamlit-Hauptanwendung
-├── requirements.txt                # Python-Abhängigkeiten
-├── Dockerfile                      # Container-Image
-├── docker-compose.yml              # App + Ollama Services
-├── LICENSE                         # MIT-Lizenz
-├── README.md
-├── config/
-│   └── settings.example.yaml       # Konfigurationsvorlage
-├── processor/
-│   ├── __init__.py
-│   ├── contract_analyzer.py        # Ollama-Integration
-│   ├── clause_extractor.py         # Klauselerkennung
-│   └── deadline_tracker.py         # Fristenverwaltung
-├── database/
-│   └── schema.sql                  # SQLite-Schema
-└── screenshots/
-    ├── dashboard.png
-    ├── vertrag_analysieren.png
-    └── fristenuebersicht.png
-```
-
-## 🔒 Datenschutz & Sicherheit
-
-- **100% lokal** — Keine Daten verlassen deinen Server
-- **Keine Cloud-APIs** — Ollama als lokales LLM, kein OpenAI/ChatGPT
-- **SQLite** — Datenbank lokal auf dem Server
-- **Keine Telemetrie** — Keine Daten werden gesendet
-- **MIT-Lizenz** — Open Source, prüfbar
-
-## 🛠️ Tech Stack
-
-| Komponente | Technologie |
-|---|---|
-| UI | [Streamlit](https://streamlit.io) |
-| KI | [Ollama](https://ollama.ai) (lokales LLM) |
-| Datenbank | SQLite |
-| Container | Docker + Docker Compose |
-| Sprache | Python 3.11+ |
-
-
-## 👤 Autor
-
-**Cela** — Freelancer für digitale Verwaltungslösungen
-## 📄 Lizenz
-
-MIT — siehe [LICENSE](LICENSE).
+<img src="screenshots/fristenuebersicht.png" alt="Fristenübersicht" width="800">
 
 ---
 
-*Entwickelt mit ❤️ für datenschutzfreundliches Vertragsmanagement.*
+## Contributing
+
+Beiträge sind willkommen! Bitte erstelle einen Issue oder Pull Request.
+
+## License
+
+MIT License — siehe [LICENSE](LICENSE).
+
+<p align="center">
+<a href="https://github.com/ceeceeceecee">ColeTrading</a> &bull; DSGVO-konform &bull; Self-Hosted &bull; Open Source
+</p>
