@@ -1,1 +1,0 @@
-"""Vertragsmanager KI - Prozessormodule."""
