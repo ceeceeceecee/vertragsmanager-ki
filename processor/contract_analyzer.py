@@ -1,3 +1,4 @@
+import os
 """
 Vertragsmanager KI - Vertragsanalyse via Ollama
 
@@ -32,7 +33,7 @@ Analysiere den gegebenen Vertragstext und gib deine Ergebnisse im folgenden JSON
 Antworte AUSSCHLIESSLICH mit dem JSON-Objekt, ohne zusätzlichen Text."""
 
 
-def analyze_contract(text: str, model: str = "llama3", base_url: str = "http://localhost:11434") -> dict:
+def analyze_contract(text: str, model: str = "llama3", base_url: str = os.getenv("OLLAMA_HOST", "http://localhost:11434")) -> dict:
     """
     Analysiert einen Vertragstext mit Ollama.
 

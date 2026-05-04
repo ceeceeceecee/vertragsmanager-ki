@@ -34,7 +34,7 @@ def load_config():
             return yaml.safe_load(f)
     else:
         return {
-            "ollama": {"base_url": "http://localhost:11434", "model": "llama3", "timeout": 120},
+            "ollama": {"base_url": os.getenv("OLLAMA_HOST", "http://localhost:11434"), "model": "llama3", "timeout": 120},
             "database": {"path": "data/vertraege.db"},
             "app": {"deadline_warning_days": 30},
         }

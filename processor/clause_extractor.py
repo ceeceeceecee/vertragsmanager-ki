@@ -1,3 +1,4 @@
+import os
 """
 Vertragsmanager KI - Klauselerkennung
 
@@ -30,7 +31,7 @@ Antworte im JSON-Format als Array:
 Antworte AUSSCHLIESSLICH mit dem JSON-Array."""
 
 
-def extract_clauses(text: str, model: str = "llama3", base_url: str = "http://localhost:11434") -> list:
+def extract_clauses(text: str, model: str = "llama3", base_url: str = os.getenv("OLLAMA_HOST", "http://localhost:11434")) -> list:
     """
     Extrahiert Klauseln aus einem Vertragstext.
 
